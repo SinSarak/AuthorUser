@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AuthorUser.Models
 {
@@ -16,8 +18,29 @@ namespace AuthorUser.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual PersonalInformation PersonalInformation { get; set; }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string rolename): base(rolename) { }
+
+    }
+
+    public class PersonalInformation
+    {
+        [Key, ForeignKey("User")]
+        public string UserId { get; set; }
+
+        public string Fullname { get; set; }
+        public string Extension { get; set; }
+        public string Company { get; set; }
+
+
+        public virtual ApplicationUser User { get; set; }
+    }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -29,5 +52,9 @@ namespace AuthorUser.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<PersonalInformation> PersonalInformations { get; set; }
+
+        //public System.Data.Entity.DbSet<AuthorUser.Models.Roles.RoleViewModel> RoleViewModels { get; set; }
     }
 }

@@ -1,0 +1,21 @@
+﻿@model AuthorUser.Models.Roles.AssignUserRoleViewModel
+@{
+    ViewBag.Title = "AssignUserRole";
+}
+
+<h2>AssignUserRole</h2>
+
+<form method="post" action="/Role/AssignUserRole">
+    <select class="form-control" name="User">
+        @foreach (var user in Model.Users) {
+        <option value="@user.Id">@user.PersonalInformation.Fullname</option>
+        }
+    </select>
+    <select class="form-control" name="Role">
+        @foreach (var role in Model.Roles)
+        {
+            <option value="@role.Name">@role.Name</option>
+        }
+    </select>
+    <input type="submit" value="Submit" class="btn btn-success"/>
+</form>

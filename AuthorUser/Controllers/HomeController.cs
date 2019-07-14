@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AuthorUser.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,8 @@ namespace AuthorUser.Controllers
             return View();
         }
 
+
+        [CustomizeAuthorize(Roles = "Stock,Admin")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,10 +23,17 @@ namespace AuthorUser.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Contact()
         {
+            
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Unauthorized()
+        {
             return View();
         }
     }

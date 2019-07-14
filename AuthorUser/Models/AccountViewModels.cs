@@ -79,6 +79,16 @@ namespace AuthorUser.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Fullname")]
+        public string Fullname { get; set; }
+
+        [Display(Name = "Extension")]
+        public string Extension { get; set; }
+
+        [Display(Name = "Company")]
+        public string Company { get; set; }
+
     }
 
     public class ResetPasswordViewModel

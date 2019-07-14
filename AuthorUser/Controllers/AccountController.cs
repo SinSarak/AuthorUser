@@ -12,11 +12,13 @@ using AuthorUser.Models;
 
 namespace AuthorUser.Controllers
 {
+
     [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -51,6 +53,8 @@ namespace AuthorUser.Controllers
                 _userManager = value;
             }
         }
+
+
 
         //
         // GET: /Account/Login
@@ -151,11 +155,20 @@ namespace AuthorUser.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var userdetail = new PersonalInformation();
+                userdetail.Fullname = model.Fullname;
+                userdetail.Extension = model.Extension;
+                userdetail.Company = model.Company;
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email , PersonalInformation = userdetail };
+                
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
+                    var claimAdmin = new Claim(ClaimTypes.Role,"Admin");
+
+                    var addClaimResult = await UserManager.AddClaimAsync(user.Id,claimAdmin);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
