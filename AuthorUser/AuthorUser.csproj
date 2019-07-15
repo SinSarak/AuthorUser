@@ -175,13 +175,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907131247339_first.cs" />
-    <Compile Include="Migrations\201907131247339_first.Designer.cs">
-      <DependentUpon>201907131247339_first.cs</DependentUpon>
+    <Compile Include="Migrations\201907150121184_firstmigration.cs" />
+    <Compile Include="Migrations\201907150121184_firstmigration.Designer.cs">
+      <DependentUpon>201907150121184_firstmigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907131301566_removeroleviewmodel.cs" />
-    <Compile Include="Migrations\201907131301566_removeroleviewmodel.Designer.cs">
-      <DependentUpon>201907131301566_removeroleviewmodel.cs</DependentUpon>
+    <Compile Include="Migrations\201907150133546_seedrole.cs" />
+    <Compile Include="Migrations\201907150133546_seedrole.Designer.cs">
+      <DependentUpon>201907150133546_seedrole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907150135537_seed2.cs" />
+    <Compile Include="Migrations\201907150135537_seed2.Designer.cs">
+      <DependentUpon>201907150135537_seed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907150144424_seed3.cs" />
+    <Compile Include="Migrations\201907150144424_seed3.Designer.cs">
+      <DependentUpon>201907150144424_seed3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907150147102_seed4.cs" />
+    <Compile Include="Migrations\201907150147102_seed4.Designer.cs">
+      <DependentUpon>201907150147102_seed4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907150147438_seed5.cs" />
+    <Compile Include="Migrations\201907150147438_seed5.Designer.cs">
+      <DependentUpon>201907150147438_seed5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -275,11 +291,23 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907131247339_first.resx">
-      <DependentUpon>201907131247339_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907150121184_firstmigration.resx">
+      <DependentUpon>201907150121184_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907131301566_removeroleviewmodel.resx">
-      <DependentUpon>201907131301566_removeroleviewmodel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907150133546_seedrole.resx">
+      <DependentUpon>201907150133546_seedrole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907150135537_seed2.resx">
+      <DependentUpon>201907150135537_seed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907150144424_seed3.resx">
+      <DependentUpon>201907150144424_seed3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907150147102_seed4.resx">
+      <DependentUpon>201907150147102_seed4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907150147438_seed5.resx">
+      <DependentUpon>201907150147438_seed5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

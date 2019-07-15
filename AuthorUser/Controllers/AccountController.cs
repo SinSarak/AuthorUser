@@ -166,6 +166,8 @@ namespace AuthorUser.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
+                    //ClaimType Role as Admin = Role as Admin 
+                    //It works the same
                     var claimAdmin = new Claim(ClaimTypes.Role,"Admin");
 
                     var addClaimResult = await UserManager.AddClaimAsync(user.Id,claimAdmin);
