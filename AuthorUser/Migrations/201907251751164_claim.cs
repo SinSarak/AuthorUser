@@ -3,10 +3,23 @@ namespace AuthorUser.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class firstmigration : DbMigration
+    public partial class claim : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.AppClaims",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Active = c.Boolean(nullable: false),
+                        ChildAppClaimId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AppClaims", t => t.ChildAppClaimId)
+                .Index(t => t.ChildAppClaimId);
+            
             CreateTable(
                 "dbo.PersonalInformations",
                 c => new
@@ -98,6 +111,7 @@ namespace AuthorUser.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.AppClaims", "ChildAppClaimId", "dbo.AppClaims");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
@@ -105,12 +119,14 @@ namespace AuthorUser.Migrations
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.PersonalInformations", new[] { "UserId" });
+            DropIndex("dbo.AppClaims", new[] { "ChildAppClaimId" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.PersonalInformations");
+            DropTable("dbo.AppClaims");
         }
     }
 }

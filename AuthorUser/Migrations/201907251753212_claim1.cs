@@ -3,7 +3,7 @@ namespace AuthorUser.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class seed3 : DbMigration
+    public partial class claim1 : DbMigration
     {
         public override void Up()
         {

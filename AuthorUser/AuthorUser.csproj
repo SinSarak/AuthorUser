@@ -175,32 +175,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907150121184_firstmigration.cs" />
-    <Compile Include="Migrations\201907150121184_firstmigration.Designer.cs">
-      <DependentUpon>201907150121184_firstmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201907251751164_claim.cs" />
+    <Compile Include="Migrations\201907251751164_claim.Designer.cs">
+      <DependentUpon>201907251751164_claim.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907150133546_seedrole.cs" />
-    <Compile Include="Migrations\201907150133546_seedrole.Designer.cs">
-      <DependentUpon>201907150133546_seedrole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907150135537_seed2.cs" />
-    <Compile Include="Migrations\201907150135537_seed2.Designer.cs">
-      <DependentUpon>201907150135537_seed2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907150144424_seed3.cs" />
-    <Compile Include="Migrations\201907150144424_seed3.Designer.cs">
-      <DependentUpon>201907150144424_seed3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907150147102_seed4.cs" />
-    <Compile Include="Migrations\201907150147102_seed4.Designer.cs">
-      <DependentUpon>201907150147102_seed4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907150147438_seed5.cs" />
-    <Compile Include="Migrations\201907150147438_seed5.Designer.cs">
-      <DependentUpon>201907150147438_seed5.cs</DependentUpon>
+    <Compile Include="Migrations\201907251753212_claim1.cs" />
+    <Compile Include="Migrations\201907251753212_claim1.Designer.cs">
+      <DependentUpon>201907251753212_claim1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AppClaim.cs" />
     <Compile Include="Models\CustomizeAuthorizeAttribute.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -291,23 +276,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907150121184_firstmigration.resx">
-      <DependentUpon>201907150121184_firstmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907251751164_claim.resx">
+      <DependentUpon>201907251751164_claim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907150133546_seedrole.resx">
-      <DependentUpon>201907150133546_seedrole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907150135537_seed2.resx">
-      <DependentUpon>201907150135537_seed2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907150144424_seed3.resx">
-      <DependentUpon>201907150144424_seed3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907150147102_seed4.resx">
-      <DependentUpon>201907150147102_seed4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907150147438_seed5.resx">
-      <DependentUpon>201907150147438_seed5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907251753212_claim1.resx">
+      <DependentUpon>201907251753212_claim1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

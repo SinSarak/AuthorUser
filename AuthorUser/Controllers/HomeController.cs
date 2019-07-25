@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace AuthorUser.Controllers
 {
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -23,7 +24,7 @@ namespace AuthorUser.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Home,Contact")]
         public ActionResult Contact()
         {
             

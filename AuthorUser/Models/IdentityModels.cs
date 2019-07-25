@@ -55,7 +55,7 @@ namespace AuthorUser.Models
         }
 
         public DbSet<PersonalInformation> PersonalInformations { get; set; }
-
+        public DbSet<AppClaim> AppClaims { get; set; }
         //public System.Data.Entity.DbSet<AuthorUser.Models.Roles.RoleViewModel> RoleViewModels { get; set; }
     }
 }
