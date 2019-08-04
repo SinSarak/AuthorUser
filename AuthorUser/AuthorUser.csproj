@@ -172,21 +172,19 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\VisiterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907251751164_claim.cs" />
-    <Compile Include="Migrations\201907251751164_claim.Designer.cs">
-      <DependentUpon>201907251751164_claim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907251753212_claim1.cs" />
-    <Compile Include="Migrations\201907251753212_claim1.Designer.cs">
-      <DependentUpon>201907251753212_claim1.cs</DependentUpon>
+    <Compile Include="Migrations\201908041640264_first.cs" />
+    <Compile Include="Migrations\201908041640264_first.Designer.cs">
+      <DependentUpon>201908041640264_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppClaim.cs" />
     <Compile Include="Models\CustomizeAuthorizeAttribute.cs" />
+    <Compile Include="Models\IdentityExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Roles\AssignUserRoleModel.cs" />
@@ -263,6 +261,7 @@
     <Content Include="Views\Error\Error404_15.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
     <Content Include="Views\Error\NotMatch.cshtml" />
+    <Content Include="Views\Visiter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,11 +275,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907251751164_claim.resx">
-      <DependentUpon>201907251751164_claim.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907251753212_claim1.resx">
-      <DependentUpon>201907251753212_claim1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908041640264_first.resx">
+      <DependentUpon>201908041640264_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

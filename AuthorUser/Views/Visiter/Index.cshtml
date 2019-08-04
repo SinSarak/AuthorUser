@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AuthorUser.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    <a href="/Account/Register">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Email
+        </th>
+        <th>Fullname</th>
+        <th>Company</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Email
+            </td>
+            <td>@item.PersonalInformation.Fullname</td>
+            <td>@item.PersonalInformation.Company</td>
+
+        </tr>
+    }
+
+</table>
