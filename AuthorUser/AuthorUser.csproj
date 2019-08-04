@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppClaimController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -180,9 +181,16 @@
     <Compile Include="Migrations\201908041640264_first.Designer.cs">
       <DependentUpon>201908041640264_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908041659261_appclaim1.cs" />
+    <Compile Include="Migrations\201908041659261_appclaim1.Designer.cs">
+      <DependentUpon>201908041659261_appclaim1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppClaim.cs" />
+    <Compile Include="Models\Claims\ClaimViewModel.cs" />
+    <Compile Include="Models\Claims\CreateMainClaimModel.cs" />
+    <Compile Include="Models\Claims\CreateMainClaimViewModel.cs" />
     <Compile Include="Models\CustomizeAuthorizeAttribute.cs" />
     <Compile Include="Models\IdentityExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -262,6 +270,9 @@
     <Content Include="Views\Error\Error500.cshtml" />
     <Content Include="Views\Error\NotMatch.cshtml" />
     <Content Include="Views\Visiter\Index.cshtml" />
+    <Content Include="Views\AppClaim\Index.cshtml" />
+    <Content Include="Views\AppClaim\Create.cshtml" />
+    <Content Include="Views\AppClaim\UserRoleClaim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,6 +288,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908041640264_first.resx">
       <DependentUpon>201908041640264_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908041659261_appclaim1.resx">
+      <DependentUpon>201908041659261_appclaim1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

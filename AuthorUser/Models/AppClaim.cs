@@ -12,9 +12,9 @@ namespace AuthorUser.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public bool Active { get; set; }
-        public int ChildAppClaimId { get; set; }
+        public int? SubClaimId { get; set; }
 
-        [ForeignKey("ChildAppClaimId")]
-        public AppClaim ChildAppClaim { get; set; }
+        [ForeignKey("SubClaimId")]
+        public AppClaim SubClaim { get; set; }
     }
 }
