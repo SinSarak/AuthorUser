@@ -8,9 +8,11 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using AuthorUser.Models.Claims;
 using Microsoft.AspNet.Identity.Owin;
+using System.Security.Claims;
 
 namespace AuthorUser.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AppClaimController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -65,6 +67,7 @@ namespace AuthorUser.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult UserRoleClaim()
         {
             List<ClaimViewModel> list = new List<ClaimViewModel>();
@@ -78,6 +81,24 @@ namespace AuthorUser.Controllers
             }
             return View(list);
         }
+
+        [HttpGet]
+        public ActionResult CreateUserRoleClaim()
+        {
+            var model = new CreateUserRoleClaimViewModel();
+            model.AppClaims = db.AppClaims.Include(p=>p.SubClaim).OrderBy(p=>p.Name).Where(p=>p.Active == true).ToList();
+            model.Users = db.Users.Include(p=>p.PersonalInformation).OrderBy(p => p.Email).ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> CreateUserRoleClaim(CreateUserRoleClaimModel userclaim)
+        {
+            var claim = new Claim(ClaimTypes.Role, userclaim.AppClaim);
+            await UserManager.AddClaimAsync(userclaim.User, claim);
+            return RedirectToAction("UserRoleClaim");
+        }
+
 
     }
 }

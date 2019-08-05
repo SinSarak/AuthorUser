@@ -177,20 +177,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908041640264_first.cs" />
-    <Compile Include="Migrations\201908041640264_first.Designer.cs">
-      <DependentUpon>201908041640264_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908041659261_appclaim1.cs" />
-    <Compile Include="Migrations\201908041659261_appclaim1.Designer.cs">
-      <DependentUpon>201908041659261_appclaim1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppClaim.cs" />
     <Compile Include="Models\Claims\ClaimViewModel.cs" />
     <Compile Include="Models\Claims\CreateMainClaimModel.cs" />
     <Compile Include="Models\Claims\CreateMainClaimViewModel.cs" />
+    <Compile Include="Models\Claims\CreateUserRoleClaimModel.cs" />
+    <Compile Include="Models\Claims\CreateUserRoleClaimViewModel.cs" />
     <Compile Include="Models\CustomizeAuthorizeAttribute.cs" />
     <Compile Include="Models\IdentityExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -273,6 +267,8 @@
     <Content Include="Views\AppClaim\Index.cshtml" />
     <Content Include="Views\AppClaim\Create.cshtml" />
     <Content Include="Views\AppClaim\UserRoleClaim.cshtml" />
+    <Content Include="Views\AppClaim\CreateUserRoleClaim.cshtml" />
+    <Content Include="Views\Home\AllRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -284,14 +280,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908041640264_first.resx">
-      <DependentUpon>201908041640264_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908041659261_appclaim1.resx">
-      <DependentUpon>201908041659261_appclaim1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

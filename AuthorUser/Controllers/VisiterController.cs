@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace AuthorUser.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class VisiterController : Controller
     {
         private ApplicationUserManager _userManager;

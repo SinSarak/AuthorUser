@@ -15,8 +15,11 @@ namespace AuthorUser.Controllers
             return View();
         }
 
-
-        [CustomizeAuthorize(Roles = "Stock,Admin")]
+        /*
+         * Return View or Customzie Unauthorize Page
+         * 
+         */
+        [CustomizeAuthorize(Roles = "Claim1,SubClaim 1.1")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -24,10 +27,19 @@ namespace AuthorUser.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Home,Contact")]
+        [Authorize(Roles = "Claim1,SubClaim 1.2")]
         public ActionResult Contact()
         {
             
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        [Authorize(Roles = "Admin,Claim1,SubClaim 1.3")]
+        public ActionResult AllRole()
+        {
+
             ViewBag.Message = "Your contact page.";
 
             return View();

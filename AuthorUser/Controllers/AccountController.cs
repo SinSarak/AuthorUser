@@ -168,10 +168,10 @@ namespace AuthorUser.Controllers
 
                     //ClaimType Role as Admin = Role as Admin 
                     //It works the same
-                    //var claimHomeAll = new Claim(ClaimTypes.Role, "Home");
+                    var claimFullname = new Claim("Fullname", userdetail.Fullname);
                     //var claimContact = new Claim(ClaimTypes.Role, "Contact");
 
-                    //await UserManager.AddClaimAsync(user.Id, claimContact);
+                    await UserManager.AddClaimAsync(user.Id, claimFullname);
                     //var addClaimResult = await UserManager.AddClaimAsync(user.Id, claimHomeAll);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
